@@ -6,7 +6,6 @@ pool:
 
 variables:
   BuildConfiguration: 'Release'
-  WorkingDir: 'gitmvc-app'
 
 steps:
 - task: UseDotNet@2
@@ -19,21 +18,24 @@ steps:
   displayName: 'Restore'
   inputs:
     command: 'restore'
-    projects: '$(WorkingDir)/*.csproj'
+    projects: 'gitmvc-app/*.csproj'
+    workingDirectory: 'gitmvc-app'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build'
   inputs:
     command: 'build'
-    projects: '$(WorkingDir)/*.csproj'
+    projects: 'gitmvc-app/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-restore'
+    workingDirectory: 'gitmvc-app'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test'
   inputs:
     command: 'test'
-    projects: '$(WorkingDir)/*[Tt]ests/*.csproj'
+    projects: 'gitmvc-app/*[Tt]ests/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-build'
+    workingDirectory: 'gitmvc-app'
   continueOnError: true
 
 - task: DotNetCoreCLI@2
@@ -41,9 +43,10 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '$(WorkingDir)/*.csproj'
+    projects: 'gitmvc-app/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: true
+    workingDirectory: 'gitmvc-app'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
