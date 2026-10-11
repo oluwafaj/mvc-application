@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mZv0MoTB4Go=",
+  "dgSpecHash": "p2hWPbNX8uo=",
   "success": true,
   "projectFilePath": "/Users/oluwafaj/github-mvc/mvc-app/mvc-application/gitmvc-app/gitmvc-app.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/oluwafaj/.nuget/packages/microsoft.netcore.app.ref/8.0.26/microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
+    "/Users/oluwafaj/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.26/microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512",
+    "/Users/oluwafaj/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.26/microsoft.netcore.app.host.osx-arm64.8.0.26.nupkg.sha512"
+  ],
   "logs": []
 }
