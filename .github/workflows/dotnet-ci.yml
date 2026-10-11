@@ -1,9 +1,6 @@
 name: .NET Core MVC CI - Development
 
 on:
-name: .NET Core MVC CI - Development
-
-on:
   push:
     branches:
       - development
